@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,7 +9,34 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
-    <title>To Do List1</title>
+    <title>To Do List</title>
 </head>
 <body>
-
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid mx-5">
+    <div>
+        <a class="navbar-brand" href="index.php">
+        <img src="./img/to-do-list.png" height="24" class="d-inline-block align-text-top">
+        ToDoList=)
+        </a>
+    </div>
+    <div>
+      <ul class="navbar-nav" style="flex-direction: row;">
+      <?php if (isset($_SESSION['user'])) { ?>
+        <li class="nav-item mx-2">
+            <a class="nav-link" href="/dashboard.php">Кабінет</a>
+        </li>
+        <li class="nav-item mx-2">
+            <a class="nav-link" id="signout" href="#">Вийти</a>
+        </li>
+      <?php } else { ?>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="SignIn.php">Sing in</a>
+        </li> 
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="Register.php">Register</a>
+        </li>
+      <?php } ?>
+    </div>
+  </div>
+</nav>

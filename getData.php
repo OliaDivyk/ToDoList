@@ -1,12 +1,10 @@
 <?php
 include './db_data.php';
-$conn = new mysqli($localhost, $username, $password, $database);
 
-if (!$conn) {
-      die("Connection failed: " . mysqli_connect_error());
-}
+$user_id = $_SESSION['user']['id'];
 
-$getTasks = "SELECT * FROM tasks"; 
+$getTasks = "SELECT * FROM tasks WHERE user_id='$user_id'"; 
+
 $getCategories = "SELECT * FROM categories"; 
 
 $result = $conn->query($getTasks);
