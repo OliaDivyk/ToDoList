@@ -1,15 +1,13 @@
 <?php
 include './db_data.php';
-$conn = new mysqli($localhost, $username, $password, $database);
+session_start();
 
-if (!$conn) {
-      die("Connection failed: " . mysqli_connect_error());
-}
+$user_id = $_SESSION['user']['id'];
 $Title = $_POST['nameTitle'];
 $Description = $_POST['description'];
 $CategoryId = $_POST['category'];
 
-$sql = "INSERT INTO tasks (id, Title, Description, Category_id) VALUES (Null, '$Title', '$Description', '$CategoryId')";
+$sql = "INSERT INTO tasks (id, user_id, Title, Description, Category_id) VALUES (Null, '$user_id', '$Title', '$Description', '$CategoryId')";
 
 if (mysqli_query($conn, $sql)) {
     echo "";

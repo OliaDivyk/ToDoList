@@ -6,11 +6,11 @@ require ('header.php');
     <form action="" method="post" class="col-3">
         <div class="my-2">
             <label>Title task</label></br>
-            <input class="input_field" type="text" id="nameTitle" name="nameTitle" placeholder="Title task" required>
+            <input class="input_field col-12" type="text" id="nameTitle" name="nameTitle" placeholder="Title task" required>
         </div>
         <div class="my-2">
             <label>Description</label></br>
-            <textarea class="input_field"  name="description" id="description" required></textarea>
+            <textarea class="input_field col-12"  name="description" id="description" required></textarea>
         </div>
         <div class="my-2">
             <select class="form-select" id="categoryId" aria-label="Select a category">
